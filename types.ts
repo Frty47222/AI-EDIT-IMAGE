@@ -11,7 +11,11 @@ export interface ProcessedImage {
 
 export interface WorkflowConfig {
   prompt: string;
+  provider: 'gemini' | 'custom';
   model: string;
   imageSize: '1K' | '2K' | '4K';
-  baseUrl?: string;
+  customUrl: string;
+  customApiKey: string;
+  customModel: string;
+  concurrency: number;
 }

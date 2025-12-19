@@ -142,7 +142,17 @@ const ImageCard: React.FC<ImageCardProps> = ({ image, onPreview, onToggleSelect,
       
       {/* 底部操作区 */}
       {image.status === 'completed' && image.editedUrl && (
-        <div className="p-2 bg-slate-800/20 flex justify-end border-t border-slate-700/50">
+        <div className="p-2 bg-slate-800/20 flex justify-end border-t border-slate-700/50 gap-2">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onGenerateSingle();
+            }}
+            className="text-[10px] flex items-center gap-2 text-slate-400 hover:text-blue-400 hover:bg-blue-600/10 transition-all px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-700 font-bold uppercase tracking-wider"
+            title="使用当前指令重新生成此图片"
+          >
+            <i className="fa-solid fa-arrows-rotate"></i> 重新生成
+          </button>
           <a 
             href={image.editedUrl} 
             download={`gmi-${image.originalName.replace(/\.[^/.]+$/, "")}.png`}
