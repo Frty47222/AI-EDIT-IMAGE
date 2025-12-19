@@ -1,0 +1,5 @@
+{
+  "name": "Gemini 批量图像编辑",
+  "description": "基于 Gemini 2.5 Flash Image 的专业批量图像编辑工具。上传文件夹，定义编辑指令，并自动序列化处理图像。",
+  "requestFramePermissions": []
+}
